@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="21.0.0-rc1" >
+        <source path="/Users/danielward/tmp/csci4669/FlagQuiz/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0-rc1/assets" />
+    </dataSet>
+    <dataSet config="main" >
+        <source path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets" >
+            <file
+                name="Africa/Africa-Algeria.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Algeria.png" />
+            <file
+                name="Africa/Africa-Angola.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Angola.png" />
+            <file
+                name="Africa/Africa-Benin.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Benin.png" />
+            <file
+                name="Africa/Africa-Botswana.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Botswana.png" />
+            <file
+                name="Africa/Africa-Burkina_Faso.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Burkina_Faso.png" />
+            <file
+                name="Africa/Africa-Burundi.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Burundi.png" />
+            <file
+                name="Africa/Africa-Cameroon.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Cameroon.png" />
+            <file
+                name="Africa/Africa-Cape_Verde.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Cape_Verde.png" />
+            <file
+                name="Africa/Africa-Central_African_Republic.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Central_African_Republic.png" />
+            <file
+                name="Africa/Africa-Chad.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Chad.png" />
+            <file
+                name="Africa/Africa-Comoros.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Comoros.png" />
+            <file
+                name="Africa/Africa-Dem._Rep._of_the_Congo.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Dem._Rep._of_the_Congo.png" />
+            <file
+                name="Africa/Africa-Djibouti.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Djibouti.png" />
+            <file
+                name="Africa/Africa-Egypt.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Egypt.png" />
+            <file
+                name="Africa/Africa-Eq._Guinea.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Eq._Guinea.png" />
+            <file
+                name="Africa/Africa-Eritrea.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Eritrea.png" />
+            <file
+                name="Africa/Africa-Ethiopia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Ethiopia.png" />
+            <file
+                name="Africa/Africa-Gabon.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Gabon.png" />
+            <file
+                name="Africa/Africa-Gambia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Gambia.png" />
+            <file
+                name="Africa/Africa-Ghana.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Ghana.png" />
+            <file
+                name="Africa/Africa-Guinea.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Guinea.png" />
+            <file
+                name="Africa/Africa-Guinea_Bissau.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Guinea_Bissau.png" />
+            <file
+                name="Africa/Africa-Ivory_Coast.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Ivory_Coast.png" />
+            <file
+                name="Africa/Africa-Kenya.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Kenya.png" />
+            <file
+                name="Africa/Africa-Lesotho.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Lesotho.png" />
+            <file
+                name="Africa/Africa-Liberia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Liberia.png" />
+            <file
+                name="Africa/Africa-Libya.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Libya.png" />
+            <file
+                name="Africa/Africa-Madagascar.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Madagascar.png" />
+            <file
+                name="Africa/Africa-Malawi.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Malawi.png" />
+            <file
+                name="Africa/Africa-Mali.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Mali.png" />
+            <file
+                name="Africa/Africa-Mauritania.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Mauritania.png" />
+            <file
+                name="Africa/Africa-Mauritius.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Mauritius.png" />
+            <file
+                name="Africa/Africa-Morocco.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Morocco.png" />
+            <file
+                name="Africa/Africa-Mozambique.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Mozambique.png" />
+            <file
+                name="Africa/Africa-Namibia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Namibia.png" />
+            <file
+                name="Africa/Africa-Niger.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Niger.png" />
+            <file
+                name="Africa/Africa-Nigeria.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Nigeria.png" />
+            <file
+                name="Africa/Africa-Republic_of_the_Congo.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Republic_of_the_Congo.png" />
+            <file
+                name="Africa/Africa-Rwanda.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Rwanda.png" />
+            <file
+                name="Africa/Africa-Sao_Tome.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Sao_Tome.png" />
+            <file
+                name="Africa/Africa-Senegal.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Senegal.png" />
+            <file
+                name="Africa/Africa-Seychelles.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Seychelles.png" />
+            <file
+                name="Africa/Africa-Sierra_Leone.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Sierra_Leone.png" />
+            <file
+                name="Africa/Africa-Somalia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Somalia.png" />
+            <file
+                name="Africa/Africa-South_Africa.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-South_Africa.png" />
+            <file
+                name="Africa/Africa-Sudan.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Sudan.png" />
+            <file
+                name="Africa/Africa-Swaziland.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Swaziland.png" />
+            <file
+                name="Africa/Africa-Tanzania.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Tanzania.png" />
+            <file
+                name="Africa/Africa-Togo.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Togo.png" />
+            <file
+                name="Africa/Africa-Tunisia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Tunisia.png" />
+            <file
+                name="Africa/Africa-Uganda.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Uganda.png" />
+            <file
+                name="Africa/Africa-Zambia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Zambia.png" />
+            <file
+                name="Africa/Africa-Zimbabwe.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Africa/Africa-Zimbabwe.png" />
+            <file
+                name="Asia/Asia-Afghanistan.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Afghanistan.png" />
+            <file
+                name="Asia/Asia-Armenia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Armenia.png" />
+            <file
+                name="Asia/Asia-Azerbaijan.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Azerbaijan.png" />
+            <file
+                name="Asia/Asia-Bahrain.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Bahrain.png" />
+            <file
+                name="Asia/Asia-Bangladesh.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Bangladesh.png" />
+            <file
+                name="Asia/Asia-Bhutan.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Bhutan.png" />
+            <file
+                name="Asia/Asia-Brunei.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Brunei.png" />
+            <file
+                name="Asia/Asia-Cambodia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Cambodia.png" />
+            <file
+                name="Asia/Asia-China.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-China.png" />
+            <file
+                name="Asia/Asia-Christmas_Island.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Christmas_Island.png" />
+            <file
+                name="Asia/Asia-Georgia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Georgia.png" />
+            <file
+                name="Asia/Asia-Hong_Kong.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Hong_Kong.png" />
+            <file
+                name="Asia/Asia-India.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-India.png" />
+            <file
+                name="Asia/Asia-Indonesia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Indonesia.png" />
+            <file
+                name="Asia/Asia-Iran.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Iran.png" />
+            <file
+                name="Asia/Asia-Iraq.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Iraq.png" />
+            <file
+                name="Asia/Asia-Israel.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Israel.png" />
+            <file
+                name="Asia/Asia-Japan.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Japan.png" />
+            <file
+                name="Asia/Asia-Jordan.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Jordan.png" />
+            <file
+                name="Asia/Asia-Kazakhstan.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Kazakhstan.png" />
+            <file
+                name="Asia/Asia-Kuwait.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Kuwait.png" />
+            <file
+                name="Asia/Asia-Kyrgyzstan.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Kyrgyzstan.png" />
+            <file
+                name="Asia/Asia-Laos.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Laos.png" />
+            <file
+                name="Asia/Asia-Lebanon.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Lebanon.png" />
+            <file
+                name="Asia/Asia-Macao.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Macao.png" />
+            <file
+                name="Asia/Asia-Malaysia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Malaysia.png" />
+            <file
+                name="Asia/Asia-Maldives.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Maldives.png" />
+            <file
+                name="Asia/Asia-Mongolia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Mongolia.png" />
+            <file
+                name="Asia/Asia-Myanmar.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Myanmar.png" />
+            <file
+                name="Asia/Asia-Nepal.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Nepal.png" />
+            <file
+                name="Asia/Asia-North_Korea.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-North_Korea.png" />
+            <file
+                name="Asia/Asia-Oman.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Oman.png" />
+            <file
+                name="Asia/Asia-Pakistan.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Pakistan.png" />
+            <file
+                name="Asia/Asia-Philippines.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Philippines.png" />
+            <file
+                name="Asia/Asia-Qatar.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Qatar.png" />
+            <file
+                name="Asia/Asia-Saudi_Arabia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Saudi_Arabia.png" />
+            <file
+                name="Asia/Asia-Singapore.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Singapore.png" />
+            <file
+                name="Asia/Asia-South_Georgia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-South_Georgia.png" />
+            <file
+                name="Asia/Asia-South_Korea.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-South_Korea.png" />
+            <file
+                name="Asia/Asia-Sri_Lanka.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Sri_Lanka.png" />
+            <file
+                name="Asia/Asia-Syria.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Syria.png" />
+            <file
+                name="Asia/Asia-Taiwan.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Taiwan.png" />
+            <file
+                name="Asia/Asia-Tajikistan.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Tajikistan.png" />
+            <file
+                name="Asia/Asia-Thailand.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Thailand.png" />
+            <file
+                name="Asia/Asia-Tibet.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Tibet.png" />
+            <file
+                name="Asia/Asia-Timor-Leste.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Timor-Leste.png" />
+            <file
+                name="Asia/Asia-Turkey.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Turkey.png" />
+            <file
+                name="Asia/Asia-Turkmenistan.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Turkmenistan.png" />
+            <file
+                name="Asia/Asia-UAE.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-UAE.png" />
+            <file
+                name="Asia/Asia-Uzbekistan.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Uzbekistan.png" />
+            <file
+                name="Asia/Asia-Vietnam.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Vietnam.png" />
+            <file
+                name="Asia/Asia-Yemen.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Asia/Asia-Yemen.png" />
+            <file
+                name="Europe/Europe-Albania.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Albania.png" />
+            <file
+                name="Europe/Europe-Andorra.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Andorra.png" />
+            <file
+                name="Europe/Europe-Austria.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Austria.png" />
+            <file
+                name="Europe/Europe-Belarus.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Belarus.png" />
+            <file
+                name="Europe/Europe-Belgium.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Belgium.png" />
+            <file
+                name="Europe/Europe-Bosnia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Bosnia.png" />
+            <file
+                name="Europe/Europe-Bulgaria.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Bulgaria.png" />
+            <file
+                name="Europe/Europe-Croatia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Croatia.png" />
+            <file
+                name="Europe/Europe-Cyprus.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Cyprus.png" />
+            <file
+                name="Europe/Europe-Czech_Republic.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Czech_Republic.png" />
+            <file
+                name="Europe/Europe-Denmark.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Denmark.png" />
+            <file
+                name="Europe/Europe-Estonia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Estonia.png" />
+            <file
+                name="Europe/Europe-Faroe_Islands.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Faroe_Islands.png" />
+            <file
+                name="Europe/Europe-Finland.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Finland.png" />
+            <file
+                name="Europe/Europe-France.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-France.png" />
+            <file
+                name="Europe/Europe-Germany.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Germany.png" />
+            <file
+                name="Europe/Europe-Gibraltar.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Gibraltar.png" />
+            <file
+                name="Europe/Europe-Greece.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Greece.png" />
+            <file
+                name="Europe/Europe-Greenland.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Greenland.png" />
+            <file
+                name="Europe/Europe-Hungary.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Hungary.png" />
+            <file
+                name="Europe/Europe-Iceland.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Iceland.png" />
+            <file
+                name="Europe/Europe-Ireland.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Ireland.png" />
+            <file
+                name="Europe/Europe-Italy.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Italy.png" />
+            <file
+                name="Europe/Europe-Latvia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Latvia.png" />
+            <file
+                name="Europe/Europe-Liechtenstein.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Liechtenstein.png" />
+            <file
+                name="Europe/Europe-Lithuania.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Lithuania.png" />
+            <file
+                name="Europe/Europe-Luxembourg.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Luxembourg.png" />
+            <file
+                name="Europe/Europe-Macedonia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Macedonia.png" />
+            <file
+                name="Europe/Europe-Malta.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Malta.png" />
+            <file
+                name="Europe/Europe-Moldova.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Moldova.png" />
+            <file
+                name="Europe/Europe-Monaco.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Monaco.png" />
+            <file
+                name="Europe/Europe-Netherlands.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Netherlands.png" />
+            <file
+                name="Europe/Europe-Norway.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Norway.png" />
+            <file
+                name="Europe/Europe-Poland.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Poland.png" />
+            <file
+                name="Europe/Europe-Portugal.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Portugal.png" />
+            <file
+                name="Europe/Europe-Romania.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Romania.png" />
+            <file
+                name="Europe/Europe-Russian_Federation.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Russian_Federation.png" />
+            <file
+                name="Europe/Europe-San_Marino.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-San_Marino.png" />
+            <file
+                name="Europe/Europe-Serbia_and_Montenegro.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Serbia_and_Montenegro.png" />
+            <file
+                name="Europe/Europe-Slovakia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Slovakia.png" />
+            <file
+                name="Europe/Europe-Slovenia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Slovenia.png" />
+            <file
+                name="Europe/Europe-Soviet_Union.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Soviet_Union.png" />
+            <file
+                name="Europe/Europe-Spain.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Spain.png" />
+            <file
+                name="Europe/Europe-Sweden.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Sweden.png" />
+            <file
+                name="Europe/Europe-Switzerland.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Switzerland.png" />
+            <file
+                name="Europe/Europe-Ukraine.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Ukraine.png" />
+            <file
+                name="Europe/Europe-United_Kingdom.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-United_Kingdom.png" />
+            <file
+                name="Europe/Europe-Vatican_City.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Europe/Europe-Vatican_City.png" />
+            <file
+                name="North_America/North_America-Anguilla.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Anguilla.png" />
+            <file
+                name="North_America/North_America-Antigua_and_Barbuda.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Antigua_and_Barbuda.png" />
+            <file
+                name="North_America/North_America-Aruba.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Aruba.png" />
+            <file
+                name="North_America/North_America-Bahamas.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Bahamas.png" />
+            <file
+                name="North_America/North_America-Barbados.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Barbados.png" />
+            <file
+                name="North_America/North_America-Belize.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Belize.png" />
+            <file
+                name="North_America/North_America-Bermuda.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Bermuda.png" />
+            <file
+                name="North_America/North_America-British_Virgin_Islands.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-British_Virgin_Islands.png" />
+            <file
+                name="North_America/North_America-Canada.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Canada.png" />
+            <file
+                name="North_America/North_America-Cayman_Islands.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Cayman_Islands.png" />
+            <file
+                name="North_America/North_America-Costa_Rica.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Costa_Rica.png" />
+            <file
+                name="North_America/North_America-Cuba.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Cuba.png" />
+            <file
+                name="North_America/North_America-Dominica.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Dominica.png" />
+            <file
+                name="North_America/North_America-Dominican_Republic.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Dominican_Republic.png" />
+            <file
+                name="North_America/North_America-El_Salvador.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-El_Salvador.png" />
+            <file
+                name="North_America/North_America-Grenada.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Grenada.png" />
+            <file
+                name="North_America/North_America-Guatemala.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Guatemala.png" />
+            <file
+                name="North_America/North_America-Haiti.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Haiti.png" />
+            <file
+                name="North_America/North_America-Honduras.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Honduras.png" />
+            <file
+                name="North_America/North_America-Jamaica.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Jamaica.png" />
+            <file
+                name="North_America/North_America-Martinique.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Martinique.png" />
+            <file
+                name="North_America/North_America-Mexico.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Mexico.png" />
+            <file
+                name="North_America/North_America-Montserrat.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Montserrat.png" />
+            <file
+                name="North_America/North_America-Nicaragua.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Nicaragua.png" />
+            <file
+                name="North_America/North_America-Panama.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Panama.png" />
+            <file
+                name="North_America/North_America-Puerto_Rico.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Puerto_Rico.png" />
+            <file
+                name="North_America/North_America-Saint_Kitts_and_Nevis.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Saint_Kitts_and_Nevis.png" />
+            <file
+                name="North_America/North_America-Saint_Lucia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Saint_Lucia.png" />
+            <file
+                name="North_America/North_America-Saint_Pierre.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Saint_Pierre.png" />
+            <file
+                name="North_America/North_America-St._Vicent_and_Grenadines.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-St._Vicent_and_Grenadines.png" />
+            <file
+                name="North_America/North_America-Turks_and_Caicos_Islands.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-Turks_and_Caicos_Islands.png" />
+            <file
+                name="North_America/North_America-United_States_of_America.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-United_States_of_America.png" />
+            <file
+                name="North_America/North_America-US_Virgin_Islands.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/North_America/North_America-US_Virgin_Islands.png" />
+            <file
+                name="Oceania/Oceania-American_Samoa.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-American_Samoa.png" />
+            <file
+                name="Oceania/Oceania-Australia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-Australia.png" />
+            <file
+                name="Oceania/Oceania-Cook_Islands.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-Cook_Islands.png" />
+            <file
+                name="Oceania/Oceania-Fiji.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-Fiji.png" />
+            <file
+                name="Oceania/Oceania-Guam.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-Guam.png" />
+            <file
+                name="Oceania/Oceania-Kiribati.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-Kiribati.png" />
+            <file
+                name="Oceania/Oceania-Marshall_Islands.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-Marshall_Islands.png" />
+            <file
+                name="Oceania/Oceania-Micronesia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-Micronesia.png" />
+            <file
+                name="Oceania/Oceania-Nauru.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-Nauru.png" />
+            <file
+                name="Oceania/Oceania-New_Zealand.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-New_Zealand.png" />
+            <file
+                name="Oceania/Oceania-Niue.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-Niue.png" />
+            <file
+                name="Oceania/Oceania-Norfolk_Island.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-Norfolk_Island.png" />
+            <file
+                name="Oceania/Oceania-Palau.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-Palau.png" />
+            <file
+                name="Oceania/Oceania-Papua_New_Guinea.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-Papua_New_Guinea.png" />
+            <file
+                name="Oceania/Oceania-Pitcairn_Islands.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-Pitcairn_Islands.png" />
+            <file
+                name="Oceania/Oceania-Samoa.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-Samoa.png" />
+            <file
+                name="Oceania/Oceania-Soloman_Islands.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-Soloman_Islands.png" />
+            <file
+                name="Oceania/Oceania-Tonga.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-Tonga.png" />
+            <file
+                name="Oceania/Oceania-Tuvalu.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-Tuvalu.png" />
+            <file
+                name="Oceania/Oceania-Vanuatu.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-Vanuatu.png" />
+            <file
+                name="Oceania/Oceania-Wallis_and_Futuna.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/Oceania/Oceania-Wallis_and_Futuna.png" />
+            <file
+                name="South_America/South_America-Argentina.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/South_America/South_America-Argentina.png" />
+            <file
+                name="South_America/South_America-Bolivia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/South_America/South_America-Bolivia.png" />
+            <file
+                name="South_America/South_America-Brazil.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/South_America/South_America-Brazil.png" />
+            <file
+                name="South_America/South_America-Chile.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/South_America/South_America-Chile.png" />
+            <file
+                name="South_America/South_America-Colombia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/South_America/South_America-Colombia.png" />
+            <file
+                name="South_America/South_America-Ecuador.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/South_America/South_America-Ecuador.png" />
+            <file
+                name="South_America/South_America-Falkland_Islands.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/South_America/South_America-Falkland_Islands.png" />
+            <file
+                name="South_America/South_America-French_Polynesia.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/South_America/South_America-French_Polynesia.png" />
+            <file
+                name="South_America/South_America-Guyana.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/South_America/South_America-Guyana.png" />
+            <file
+                name="South_America/South_America-Netherlands_Antilles.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/South_America/South_America-Netherlands_Antilles.png" />
+            <file
+                name="South_America/South_America-Paraguay.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/South_America/South_America-Paraguay.png" />
+            <file
+                name="South_America/South_America-Peru.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/South_America/South_America-Peru.png" />
+            <file
+                name="South_America/South_America-Suriname.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/South_America/South_America-Suriname.png" />
+            <file
+                name="South_America/South_America-Trinidad_and_Tobago.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/South_America/South_America-Trinidad_and_Tobago.png" />
+            <file
+                name="South_America/South_America-Uruguay.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/South_America/South_America-Uruguay.png" />
+            <file
+                name="South_America/South_America-Venezuela.png"
+                path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/main/assets/South_America/South_America-Venezuela.png" />
+        </source>
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/danielward/tmp/csci4669/FlagQuiz/app/src/debug/assets" />
+    </dataSet>
+
+</merger>

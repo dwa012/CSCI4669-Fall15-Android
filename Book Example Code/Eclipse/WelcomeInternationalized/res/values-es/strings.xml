@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome">¡Bienvenido al Desarrollo de App Android!"</string>
+    <string name="android_logo">Logo de Android</string>
+    <string name="deitel_logo">Deitel double-thumbs-up bug logo</string>
+
+</resources>

@@ -1,0 +1,48 @@
+<!-- main.xml -->
+<!-- Welcome App's XML layout. -->
+
+<!-- RelativeLayout that contains the App's GUI components. -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:id="@+id/welcomeRelativeLayout"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:paddingBottom="@dimen/activity_vertical_margin"
+   android:paddingLeft="@dimen/activity_horizontal_margin"
+   android:paddingRight="@dimen/activity_horizontal_margin"
+   android:paddingTop="@dimen/activity_vertical_margin"
+   tools:context=".MainActivity" >
+
+   <!-- TextView that displays "Welcome to Android App Development!" -->
+   <TextView
+      android:id="@+id/welcomeTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:text="@string/welcome"
+      android:textColor="@android:color/holo_blue_dark"
+      android:textSize="@dimen/welcome_textsize" />
+
+   <!-- ImageView that displays the Android logo -->
+
+   <ImageView
+       android:id="@+id/droidImageView"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/welcomeTextView"
+       android:layout_centerHorizontal="true"
+       android:contentDescription="@string/android_logo"
+       android:src="@drawable/android" />
+
+   <!-- ImageView that displays the Deitel bug logo -->   
+
+   <ImageView
+       android:id="@+id/bugImageView"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/droidImageView"
+       android:layout_centerHorizontal="true"
+       android:contentDescription="@string/deitel_logo"
+       android:src="@drawable/bug" />
+
+</RelativeLayout>

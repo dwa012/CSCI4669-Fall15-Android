@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/detailsScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:orientation="vertical"
+        android:useDefaultMargins="true" >
+
+    <TextView
+        android:id="@+id/nameLabelTextView"
+        style="@style/ContactLabelTextView"
+        android:layout_column="0"
+        android:layout_row="0"
+        android:text="@string/label_name" />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_column="1"
+        android:layout_row="0"
+        style="@style/ContactTextView" />
+
+    <TextView
+        android:id="@+id/phoneLabelTextView"
+        android:layout_column="0"
+        android:layout_row="1"
+        android:text="@string/label_phone"
+        style="@style/ContactLabelTextView" />
+
+    <TextView
+        android:id="@+id/phoneTextView"
+        android:layout_column="1"
+        android:layout_row="1"
+        style="@style/ContactTextView" />
+
+    <TextView
+        android:id="@+id/emailLabelTextView"
+        android:layout_column="0"
+        android:layout_row="2"
+        android:text="@string/label_email"
+        style="@style/ContactLabelTextView" />
+
+    <TextView
+        android:id="@+id/emailTextView"
+        android:layout_column="1"
+        android:layout_row="2"
+        style="@style/ContactTextView" />
+    
+    <TextView
+        android:id="@+id/streetLabelTextView"
+        android:layout_column="0"
+        android:layout_row="3"
+        android:text="@string/label_street"
+        style="@style/ContactLabelTextView" />
+
+    <TextView
+        android:id="@+id/streetTextView"
+        android:layout_column="1"
+        android:layout_row="3"
+        style="@style/ContactTextView" />
+    
+    <TextView
+        android:id="@+id/cityLabelTextView"
+        android:layout_column="0"
+        android:layout_row="4"
+        android:text="@string/label_city"
+        style="@style/ContactLabelTextView" />
+
+    <TextView
+        android:id="@+id/cityTextView"
+        android:layout_column="1"
+        android:layout_row="4"
+        style="@style/ContactTextView" />
+
+    <TextView
+        android:id="@+id/stateLabelTextView"
+        android:layout_column="0"
+        android:layout_row="5"
+        android:text="@string/label_state"
+        style="@style/ContactLabelTextView" />
+
+    <TextView
+        android:id="@+id/stateTextView"
+        android:layout_column="1"
+        android:layout_row="5"
+        style="@style/ContactTextView" />
+    
+    <TextView
+        android:id="@+id/zipLabelTextView"
+        android:layout_column="0"
+        android:layout_row="6"
+        android:text="@string/label_zip"
+        style="@style/ContactLabelTextView" />
+
+    <TextView
+        android:id="@+id/zipTextView"
+        android:layout_column="1"
+        android:layout_row="6"
+        style="@style/ContactTextView" />
+</GridLayout>
+
+</ScrollView>

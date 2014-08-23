@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/Users/danielward/tmp/csci4669/Welcome/app/src/main/res/values-es/strings.xml -->
+    <eat-comment />
+
+    <string name="android_logo">Logo de Android</string>
+    <string name="deitel_logo">Deitel double-thumbs-up bug logo</string>
+    <string name="welcome">¡Bienvenido al Desarrollo de App Android!"</string>
+
+</resources>

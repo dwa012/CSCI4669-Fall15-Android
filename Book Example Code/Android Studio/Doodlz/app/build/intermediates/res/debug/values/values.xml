@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/Users/danielward/tmp/csci4669/Doodlz/app/src/main/res/values/dimens.xml -->
+    <eat-comment />
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="color_view_height">80dp</dimen>
+    <dimen name="line_imageview_height">50dp</dimen>
+    <!-- From: file:/Users/danielward/tmp/csci4669/Doodlz/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="app_name">Doodlz</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_erase">Erase Image</string>
+    <string name="button_set_color">Set Color</string>
+    <string name="button_set_line_width">Set Line Width</string>
+    <string name="label_alpha">Alpha</string>
+    <string name="label_blue">Blue</string>
+    <string name="label_green">Green</string>
+    <string name="label_red">Red</string>
+    <string name="line_imageview_description">This displays the line thickness</string>
+    <string name="menuitem_clear">Clear</string>
+    <string name="menuitem_color">Color</string>
+    <string name="menuitem_eraser">Eraser</string>
+    <string name="menuitem_line_width">Line Width</string>
+    <string name="menuitem_print">Print</string>
+    <string name="menuitem_save">Save</string>
+    <string name="message_erase">Erase the drawing?</string>
+    <string name="message_error_printing">Your device does not support printing</string>
+    <string name="message_error_saving">There was an error saving the image</string>
+    <string name="message_saved">Your painting has been saved to the Gallery</string>
+    <string name="title_color_dialog">Choose Color</string>
+    <string name="title_line_width_dialog">Choose Line Width</string>
+    <!-- From: file:/Users/danielward/tmp/csci4669/Doodlz/app/src/main/res/values/styles.xml -->
+    <eat-comment />
+
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+</resources>

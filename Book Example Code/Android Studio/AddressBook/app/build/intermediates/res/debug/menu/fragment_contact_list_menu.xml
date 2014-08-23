@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_add"
+        android:orderInCategory="0"
+        android:showAsAction="ifRoom|withText"
+        android:title="@string/menuitem_add" 
+        android:icon="@android:drawable/ic_menu_add"/>
+
+</menu>
+<!-- From: file:/Users/danielward/tmp/csci4669/AddressBook/app/src/main/res/menu/fragment_contact_list_menu.xml -->

@@ -1,0 +1,29 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/color"
+        android:showAsAction="ifRoom"
+        android:title="@string/menuitem_color">
+    </item>
+    <item
+        android:id="@+id/lineWidth"
+        android:showAsAction="ifRoom"
+        android:title="@string/menuitem_line_width">
+    </item>
+    <item
+        android:id="@+id/eraser"
+        android:showAsAction="ifRoom"
+        android:title="@string/menuitem_eraser">
+    </item>
+    <item
+        android:id="@+id/clear"
+        android:showAsAction="ifRoom"
+        android:title="@string/menuitem_clear">
+    </item>
+    <item
+        android:id="@+id/save"
+        android:showAsAction="ifRoom"
+        android:title="@string/menuitem_save">
+    </item>
+
+</menu>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Welcome</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="welcome">Welcome to Android App Development!</string>
+    <string name="android_logo">Android logo</string>
+    <string name="deitel_logo">Deitel double-thumbs-up bug logo</string>
+
+</resources>

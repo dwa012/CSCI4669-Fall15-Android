@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/colorDialogGridLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    android:orientation="vertical"
+    android:useDefaultMargins="true" >
+
+    <TextView
+        android:id="@+id/alphaTextView"
+        android:layout_column="0"
+        android:layout_gravity="right|center_vertical"
+        android:layout_row="0"
+        android:text="@string/label_alpha" />
+
+    <SeekBar
+        android:id="@+id/alphaSeekBar"
+        android:layout_column="1"
+        android:layout_gravity="fill_horizontal"
+        android:layout_row="0"
+        android:max="255" />
+
+    <TextView
+        android:id="@+id/redTextView"
+        android:layout_column="0"
+        android:layout_gravity="right|center_vertical"
+        android:layout_row="1"
+        android:text="@string/label_red" />
+
+    <SeekBar
+        android:id="@+id/redSeekBar"
+        android:layout_column="1"
+        android:layout_gravity="fill_horizontal"
+        android:layout_row="1"
+        android:max="255" />
+
+    <TextView
+        android:id="@+id/greenTextView"
+        android:layout_column="0"
+        android:layout_gravity="right|center_vertical"
+        android:layout_row="2"
+        android:text="@string/label_green" />
+
+    <SeekBar
+        android:id="@+id/greenSeekBar"
+        android:layout_column="1"
+        android:layout_gravity="fill_horizontal"
+        android:layout_row="2"
+        android:max="255" />
+
+    <TextView
+        android:id="@+id/blueTextView"
+        android:layout_column="0"
+        android:layout_gravity="right|center_vertical"
+        android:layout_row="3"
+        android:text="@string/label_blue" />
+
+    <SeekBar
+        android:id="@+id/blueSeekBar"
+        android:layout_column="1"
+        android:layout_gravity="fill_horizontal"
+        android:layout_row="3"
+        android:max="255" />
+
+    <View
+        android:id="@+id/colorView"
+        android:layout_height="@dimen/color_view_height"
+        android:layout_column="0"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill_horizontal" />
+
+</GridLayout>
