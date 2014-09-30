@@ -145,7 +145,8 @@ public class MainActivity extends Activity
                editor.putStringSet(REGIONS, regions);
                editor.commit();
                Toast.makeText(MainActivity.this, 
-                  R.string.default_region_message, 
+
+                       R.string.default_region_message,
                   Toast.LENGTH_SHORT).show();
             }
          }
