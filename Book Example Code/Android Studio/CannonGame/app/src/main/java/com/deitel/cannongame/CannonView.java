@@ -32,7 +32,7 @@ public class CannonView extends SurfaceView
    private boolean dialogIsDisplayed = false;   
                
    // constants for game play
-   public static final int TARGET_PIECES = 7; // sections in the target
+   public static final int TARGET_PIECES = 100; // sections in the target
    public static final int MISS_PENALTY = 2; // seconds deducted on a miss
    public static final int HIT_REWARD = 3; // seconds added on a hit
 
@@ -263,8 +263,10 @@ public class CannonView extends SurfaceView
                soundPool.play(soundMap.get(TARGET_SOUND_ID), 1,
                   1, 1, 0, 1f);
 
+                targetPiecesHit = targetPiecesHit + 1;
+
                // if all pieces have been hit
-               if (++targetPiecesHit == TARGET_PIECES)
+               if (targetPiecesHit == TARGET_PIECES)
                {
                   cannonThread.setRunning(false); // terminate thread
                   showGameOverDialog(R.string.win); // show winning dialog
