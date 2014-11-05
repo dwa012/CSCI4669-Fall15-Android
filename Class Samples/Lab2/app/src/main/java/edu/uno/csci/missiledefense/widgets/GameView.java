@@ -74,7 +74,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         screenHeight = h; // store CannonView's height
 
         missileScaleHeight = h * 0.1;
-        baseMissileSpeed = (int) (h * 0.1); // cannonball speed multiplier
+        baseMissileSpeed = (int) (h * 0.005); // cannonball speed multiplier
 
         backgroundPaint.setColor(Color.WHITE); // set background color
 
@@ -87,7 +87,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         // set every element of hitStates to false--restores target pieces
         Bitmap bitmap = BitmapFactory.decodeResource(activity.getResources(), R.drawable.rocket);
         float missilesScale = ((float)missileScaleHeight / (float)bitmap.getHeight());
-        missiles.add(new Missile(bitmap, new Point(screenWidth/2, 0), -20, missilesScale, baseMissileSpeed));
+        missiles.add(new Missile(bitmap, new Point(100, 0), -20, missilesScale, baseMissileSpeed));
+        missiles.add(new Missile(bitmap, new Point(screenWidth - 200, 0), 20, missilesScale, baseMissileSpeed));
 
         totalElapsedTime = 0.0; // set the time elapsed to zero
 
@@ -100,9 +101,43 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     } // end method newGame
 
     public void updatePositions(double elapsedTime) {
+
+        //-------------------------
+        // UPDATE POSITIONS FIRST
         for (Missile missile : missiles) {
-            missile.updatePosition(elapsedTime);
+            if (missile.isActive)
+                missile.updatePosition(elapsedTime);
         }
+
+        //-------------------------
+        // PRUNE THE MISSILE LIST
+
+        List<Missile> copy = new ArrayList<Missile>(missiles);
+
+        for(Missile missile : missiles) {
+            if(!missile.isActive) {
+                copy.remove(missile);
+            }
+        }
+
+        missiles = copy;
+
+        //-------------------------
+        // CHECK FOR COLLISIONS
+
+        for (Missile missile : missiles) {
+            for (Missile other : missiles) {
+                if (missile != other) {
+                    if (missile.collidesWith(other)) {
+                        missile.isActive = false;
+                        other.isActive = false;
+                    }
+                }
+
+            }
+        }
+
+
     }
 
     public void drawGameElements(Canvas canvas) {

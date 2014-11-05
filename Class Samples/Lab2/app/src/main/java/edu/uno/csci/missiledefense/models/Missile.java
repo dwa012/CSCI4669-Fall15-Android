@@ -18,10 +18,13 @@ public class Missile extends Model implements Collidable{
     public double angle;
     public Bitmap bitmap;
 
+    public boolean isActive;
+
     public Missile(Bitmap bitmap, Point origin, double angle, float scale, int velocity) {
         this.angle = angle;
         this.origin = origin;
         this.velocity = velocity;
+        this.isActive = true;
         this.bitmap = Bitmap.createScaledBitmap(bitmap, (int)(scale * (float)bitmap.getWidth()), (int)(scale * (float)bitmap.getHeight()), false);
     }
 
@@ -29,14 +32,9 @@ public class Missile extends Model implements Collidable{
         double interval = elapsedTime;
 
         double radians = (angle/180.0) * Math.PI;
-        // get the x component of the total velocity
-        int velocityX = (int) (-velocity * Math.sin(radians));
 
-        // get the y component of the total velocity
-        int velocityY = (int) (velocity * Math.cos(radians));
-
-        origin.x =  (int) (interval * velocityX);
-        origin.y =  (int) (interval * velocityY);
+        origin.x = origin.x + (int) (interval * (-velocity * Math.sin(radians)));
+        origin.y = origin.y + (int) (interval * (velocity * Math.cos(radians)));
     }
 
     @Override
@@ -51,18 +49,25 @@ public class Missile extends Model implements Collidable{
     }
 
     @Override
-    public Rect getBounds() {
-        Rect bounds = new Rect(origin.x, origin.y, 0, 0);
-//        Matrix m = new Matrix();
-// point is the point about which to rotate.
-//        m.setRotate(degrees, point.x, point.y);
-//        m.mapRect(r);
+    public RectF getBounds() {
+        RectF rect = new RectF(origin.x, origin.y, origin.x + bitmap.getWidth(), origin.y + bitmap.getHeight());
 
-        return new Rect();
+        final RectF rectF = new RectF(rect);
+        final Matrix matrix = new Matrix();
+
+        float centerX = origin.x + (bitmap.getWidth() / 2);
+        float centerY = origin.y + (bitmap.getHeight() / 2);
+
+        matrix.setRotate((int)angle, centerX, centerY);
+        matrix.mapRect(rectF);
+
+        rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+
+       return rect;
     }
 
     @Override
-    public boolean collidesWith(Collidable collidable) {
-        return false;
+    public boolean collidesWith(Collidable otherCollidable) {
+        return RectF.intersects(this.getBounds(),otherCollidable.getBounds());
     }
 }
