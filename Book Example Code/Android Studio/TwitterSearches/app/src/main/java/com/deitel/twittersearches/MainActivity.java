@@ -35,10 +35,7 @@ public class MainActivity extends ListActivity
    private SharedPreferences savedSearches; // user's favorite searches
    private ArrayList<String> tags; // list of tags for saved searches
    private ArrayAdapter<String> adapter; // binds tags to ListView
-
-
-
-
+   
    // called when MainActivity is first created
    @Override
    protected void onCreate(Bundle savedInstanceState)
@@ -227,8 +224,7 @@ public class MainActivity extends ListActivity
          getString(R.string.shareSubject));
       shareIntent.putExtra(Intent.EXTRA_TEXT, 
          getString(R.string.shareMessage, urlString));
-       shareIntent.putExtra("stuff", new Item());
-      shareIntent.setType("awesome/item");
+      shareIntent.setType("text/plain");
       
       // display apps that can share text
       startActivity(Intent.createChooser(shareIntent, 

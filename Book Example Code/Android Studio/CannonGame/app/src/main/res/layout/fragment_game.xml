@@ -9,9 +9,4 @@
         android:layout_height="match_parent"
         class="com.deitel.cannongame.CannonView" />
 
-    <!--<com.deitel.cannongame.CannonView-->
-        <!--android:id="@+id/cannonView"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"/>-->
-
 </FrameLayout>
