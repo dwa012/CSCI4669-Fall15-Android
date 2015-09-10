@@ -6,6 +6,7 @@ package com.deitel.twittersearches;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Context;
@@ -14,8 +15,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -25,7 +30,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class MainActivity extends ListActivity
+public class MainActivity extends Activity
 {
    // name of SharedPreferences XML file that stores the saved searches 
    private static final String SEARCHES = "searches";
@@ -34,8 +39,8 @@ public class MainActivity extends ListActivity
    private EditText tagEditText; // EditText where user tags a query
    private SharedPreferences savedSearches; // user's favorite searches
    private ArrayList<String> tags; // list of tags for saved searches
-   private ArrayAdapter<String> adapter; // binds tags to ListView
-   
+   private RecyclerView recyclerView;
+   private SearchesAdapter adapter;
    // called when MainActivity is first created
    @Override
    protected void onCreate(Bundle savedInstanceState)
@@ -52,22 +57,20 @@ public class MainActivity extends ListActivity
 
       // store the saved tags in an ArrayList then sort them
       tags = new ArrayList<String>(savedSearches.getAll().keySet());
-      Collections.sort(tags, String.CASE_INSENSITIVE_ORDER); 
-      
+      Collections.sort(tags, String.CASE_INSENSITIVE_ORDER);
+
+      recyclerView = (RecyclerView) findViewById(R.id.list);
+
       // create ArrayAdapter and use it to bind tags to the ListView
-      adapter = new ArrayAdapter<String>(this, R.layout.list_item, tags);
-      setListAdapter(adapter);
-      
+      adapter = new SearchesAdapter();
+      recyclerView.setAdapter(adapter);
+      recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
       // register listener to save a new or edited search 
       ImageButton saveButton = 
          (ImageButton) findViewById(R.id.saveButton);
       saveButton.setOnClickListener(saveButtonListener);
 
-      // register listener that searches Twitter when user touches a tag
-      getListView().setOnItemClickListener(itemClickListener);  
-      
-      // set listener that allows user to delete or edit a search
-      getListView().setOnItemLongClickListener(itemLongClickListener);  
    } // end method onCreate
 
    // saveButtonListener saves a tag-query pair into SharedPreferences
@@ -126,88 +129,85 @@ public class MainActivity extends ListActivity
    } 
    
    // itemClickListener launches a web browser to display search results
-   OnItemClickListener itemClickListener = new OnItemClickListener() 
+   OnClickListener itemClickListener = new OnClickListener()
    {
       @Override
-      public void onItemClick(AdapterView<?> parent, View view, 
-         int position, long id) 
-      {
+      public void onClick(View v) {
          // get query string and create a URL representing the search
-         String tag = ((TextView) view).getText().toString();
+         String tag = ((TextView) v.findViewById(R.id.textView)).getText().toString();
          String urlString = getString(R.string.searchURL) +
-            Uri.encode(savedSearches.getString(tag, ""), "UTF-8");
-         
-         // create an Intent to launch a web browser    
-         Intent webIntent = new Intent(Intent.ACTION_VIEW, 
-            Uri.parse(urlString));                      
+                 Uri.encode(savedSearches.getString(tag, ""), "UTF-8");
+
+         // create an Intent to launch a web browser
+         Intent webIntent = new Intent(Intent.ACTION_VIEW,
+                 Uri.parse(urlString));
 
          startActivity(webIntent); // launches web browser to view results
-      } 
+      }
+
    }; // end itemClickListener declaration
    
    // itemLongClickListener displays a dialog allowing the user to delete 
    // or edit a saved search
-   OnItemLongClickListener itemLongClickListener = 
-      new OnItemLongClickListener()
+   View.OnLongClickListener itemLongClickListener =
+      new View.OnLongClickListener()
       {
          @Override
-         public boolean onItemLongClick(AdapterView<?> parent, View view,
-            int position, long id)
-         {
+         public boolean onLongClick(View v) {
             // get the tag that the user long touched
-            final String tag = ((TextView) view).getText().toString();
-            
+            final String tag = ((TextView) v.findViewById(R.id.textView)).getText().toString();
+
             // create a new AlertDialog
-            AlertDialog.Builder builder = 
-               new AlertDialog.Builder(MainActivity.this);
-            
+            AlertDialog.Builder builder =
+                    new AlertDialog.Builder(MainActivity.this);
+
             // set the AlertDialog's title
             builder.setTitle(
-               getString(R.string.shareEditDeleteTitle, tag));
-            
+                    getString(R.string.shareEditDeleteTitle, tag));
+
             // set list of items to display in dialog
-            builder.setItems(R.array.dialog_items, 
-               new DialogInterface.OnClickListener()
-               {
-                  // responds to user touch by sharing, editing or 
-                  // deleting a saved search
-                  @Override
-                  public void onClick(DialogInterface dialog, int which)
-                  {
-                     switch (which)
-                     {
-                        case 0: // share
-                           shareSearch(tag);
-                           break;
-                        case 1: // edit
-                           // set EditTexts to match chosen tag and query
-                           tagEditText.setText(tag);
-                           queryEditText.setText(
-                              savedSearches.getString(tag, ""));
-                           break;
-                        case 2: // delete
-                           deleteSearch(tag);
-                           break;
-                     } 
-                  }
-               } // end DialogInterface.OnClickListener
+            builder.setItems(R.array.dialog_items,
+                    new DialogInterface.OnClickListener()
+                    {
+                       // responds to user touch by sharing, editing or
+                       // deleting a saved search
+                       @Override
+                       public void onClick(DialogInterface dialog, int which)
+                       {
+                          switch (which)
+                          {
+                             case 0: // share
+                                shareSearch(tag);
+                                break;
+                             case 1: // edit
+                                // set EditTexts to match chosen tag and query
+                                tagEditText.setText(tag);
+                                queryEditText.setText(
+                                        savedSearches.getString(tag, ""));
+                                break;
+                             case 2: // delete
+                                deleteSearch(tag);
+                                break;
+                          }
+                       }
+                    } // end DialogInterface.OnClickListener
             ); // end call to builder.setItems
-            
+
             // set the AlertDialog's negative Button
-            builder.setNegativeButton(getString(R.string.cancel), 
-               new DialogInterface.OnClickListener() 
-               {
-                 // called when the "Cancel" Button is clicked
-                  public void onClick(DialogInterface dialog, int id) 
-                  {
-                     dialog.cancel(); // dismiss the AlertDialog
-                  }
-               } 
+            builder.setNegativeButton(getString(R.string.cancel),
+                    new DialogInterface.OnClickListener()
+                    {
+                       // called when the "Cancel" Button is clicked
+                       public void onClick(DialogInterface dialog, int id)
+                       {
+                          dialog.cancel(); // dismiss the AlertDialog
+                       }
+                    }
             ); // end call to setNegativeButton
-            
-            builder.create().show(); // display the AlertDialog            
+
+            builder.create().show(); // display the AlertDialog
             return true;
-         } // end method onItemLongClick  
+         }
       }; // end OnItemLongClickListener declaration
 
    // allows user to choose an app for sharing a saved search's URL
@@ -220,15 +220,15 @@ public class MainActivity extends ListActivity
       // create Intent to share urlString
       Intent shareIntent = new Intent();
       shareIntent.setAction(Intent.ACTION_SEND);
-      shareIntent.putExtra(Intent.EXTRA_SUBJECT, 
-         getString(R.string.shareSubject));
-      shareIntent.putExtra(Intent.EXTRA_TEXT, 
-         getString(R.string.shareMessage, urlString));
+      shareIntent.putExtra(Intent.EXTRA_SUBJECT,
+              getString(R.string.shareSubject));
+      shareIntent.putExtra(Intent.EXTRA_TEXT,
+              getString(R.string.shareMessage, urlString));
       shareIntent.setType("text/plain");
       
       // display apps that can share text
-      startActivity(Intent.createChooser(shareIntent, 
-         getString(R.string.shareSearch)));   
+      startActivity(Intent.createChooser(shareIntent,
+              getString(R.string.shareSearch)));
    }
 
    // deletes a search after the user confirms the delete operation
@@ -276,6 +276,64 @@ public class MainActivity extends ListActivity
 
       confirmBuilder.create().show(); // display AlertDialog    
    } // end method deleteSearch
+
+   // Create the basic adapter extending from RecyclerView.Adapter
+   // Note that we specify the custom ViewHolder which gives us access to our views
+   public class SearchesAdapter extends RecyclerView.Adapter<ViewHolder> {
+
+      // Usually involves inflating a layout from XML and returning the holder
+      @Override
+      public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+         Context context = parent.getContext();
+         LayoutInflater inflater = LayoutInflater.from(context);
+
+         // Inflate the custom layout
+         View contactView = inflater.inflate(R.layout.list_item, parent, false);
+
+         contactView.setOnClickListener(itemClickListener);
+         contactView.setOnLongClickListener(itemLongClickListener);
+
+         // Return a new holder instance
+         ViewHolder viewHolder = new ViewHolder(contactView);
+         return viewHolder;
+      }
+
+      // Involves populating data into the item through holder
+      @Override
+      public void onBindViewHolder(ViewHolder viewHolder, int position) {
+         // Get the data model based on position
+         String search = tags.get(position);
+
+         // Set item views based on the data model
+         TextView textView = viewHolder.textView;
+         textView.setText(search);
+      }
+
+      // Return the total count of items
+      @Override
+      public int getItemCount() {
+         return tags.size();
+      }
+   }
+
+   // Provide a direct reference to each of the views within a data item
+   // Used to cache the views within the item layout for fast access
+   public static class ViewHolder extends RecyclerView.ViewHolder {
+      // Your holder should contain a member variable
+      // for any view that will be set as you render a row
+      public TextView textView;
+
+      // We also create a constructor that accepts the entire item row
+      // and does the view lookups to find each subview
+      public ViewHolder(View itemView) {
+         // Stores the itemView in a public final member variable that can be used
+         // to access the context from any ViewHolder instance.
+         super(itemView);
+
+         textView = (TextView) itemView.findViewById(R.id.textView);
+      }
+   }
+
 } // end class MainActivity
 
 
