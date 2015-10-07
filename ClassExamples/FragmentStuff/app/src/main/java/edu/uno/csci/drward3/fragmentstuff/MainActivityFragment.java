@@ -23,6 +23,9 @@ public class MainActivityFragment extends Fragment {
 
     private MainActivityFragmentItemCLickListener itemCLickListener;
     private RecyclerView recyclerView;
+    private View colorView;
+
+    private int selectedColor;
 
     public MainActivityFragment() {
     }
@@ -45,6 +48,17 @@ public class MainActivityFragment extends Fragment {
 
         recyclerView = (RecyclerView) view.findViewById(R.id.list);
 
+        // will be null when in landscape
+        colorView = view.findViewById(R.id.color_view);
+        if (colorView != null) {
+            colorView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    itemCLickListener.onItemClick(selectedColor);
+                }
+            });
+        }
+
         // create ArrayAdapter and use it to bind tags to the ListView
         adapter = new ColorsAdapter();
         recyclerView.setAdapter(adapter);
@@ -57,10 +71,24 @@ public class MainActivityFragment extends Fragment {
     }
 
     private void initColors() {
+
+        selectedColor = getResources().getColor(R.color.blue);
+
         colors.add(new ColorPair(R.string.blue, R.color.blue));
         colors.add(new ColorPair(R.string.green, R.color.green));
         colors.add(new ColorPair(R.string.yellow, R.color.yellow));
         colors.add(new ColorPair(R.string.red, R.color.red));
+    }
+
+    public int getSelectedColor() {
+        return selectedColor;
+    }
+
+    public void setSelectedColor(int selectedColor) {
+        this.selectedColor = selectedColor;
+        if (colorView != null) {
+            colorView.setBackgroundColor(this.selectedColor);
+        }
     }
 
     // Create the basic adapter extending from RecyclerView.Adapter
@@ -74,7 +102,7 @@ public class MainActivityFragment extends Fragment {
             LayoutInflater inflater = LayoutInflater.from(context);
 
             // Inflate the custom layout
-            View contactView = inflater.inflate(R.layout.item, parent, false);
+            final View contactView = inflater.inflate(R.layout.item, parent, false);
 
             contactView.setOnClickListener(new View.OnClickListener()
             {
@@ -83,8 +111,14 @@ public class MainActivityFragment extends Fragment {
                     int itemPosition = recyclerView.getChildAdapterPosition(v);
                     ColorPair item = colors.get(itemPosition);
 
-                    // needed to get the color resource, not use the id
-                    itemCLickListener.onItemClick(getResources().getColor(item.colorId));
+                    selectedColor = getResources().getColor(item.colorId);
+
+                    if (colorView != null) {
+                        colorView.setBackgroundColor(selectedColor);
+                    } else {
+                        // needed to get the color resource, not use the id
+                        itemCLickListener.onItemClick(getResources().getColor(item.colorId));
+                    }
                 }
 
             });

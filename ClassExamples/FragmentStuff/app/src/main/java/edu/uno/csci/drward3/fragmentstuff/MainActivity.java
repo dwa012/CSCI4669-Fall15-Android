@@ -3,14 +3,19 @@ package edu.uno.csci.drward3.fragmentstuff;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity implements MainActivityFragment.MainActivityFragmentItemCLickListener {
 
+    static final String COLOR_KEY = "color_key";
+
     private Fragment fragment2;
+    private int lastSelectedColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +24,42 @@ public class MainActivity extends AppCompatActivity implements MainActivityFragm
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // fragment2 will be null in portrait
         fragment2 = getFragmentManager().findFragmentById(R.id.fragment2);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        MainActivityFragment fragment = (MainActivityFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
+        outState.putInt(COLOR_KEY, fragment.getSelectedColor());
+
+        lastSelectedColor = fragment.getSelectedColor();
+
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        int color = savedInstanceState.getInt(COLOR_KEY, lastSelectedColor);
+
+        MainActivityFragment fragment = (MainActivityFragment) getSupportFragmentManager().findFragmentById(R.id.fragment);
+        fragment.setSelectedColor(color);
+
+        if (findViewById(R.id.fragment2) != null) {
+            ((DetailFragment)fragment2).updateBackgroundColor(color);
+        }
     }
 
     @Override
