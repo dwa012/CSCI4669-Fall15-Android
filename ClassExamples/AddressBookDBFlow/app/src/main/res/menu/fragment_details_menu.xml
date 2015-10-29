@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+   <item android:id="@+id/action_edit"
+      android:title="@string/menuitem_edit" 
+      android:orderInCategory="1" 
+      android:icon="@android:drawable/ic_menu_edit" android:showAsAction="ifRoom|withText"></item>
+   <item android:id="@+id/action_delete" 
+      android:title="@string/menuitem_delete"
+      android:orderInCategory="2" 
+      android:icon="@android:drawable/ic_delete" android:showAsAction="ifRoom|withText"></item>
+</menu>

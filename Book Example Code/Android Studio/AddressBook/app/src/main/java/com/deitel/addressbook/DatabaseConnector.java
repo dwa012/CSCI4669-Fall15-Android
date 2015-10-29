@@ -14,7 +14,8 @@ public class DatabaseConnector
 {
    // database name
    private static final String DATABASE_NAME = "UserContacts";
-      
+   private static final int DATABASE_VERSION = 1;
+
    private SQLiteDatabase database; // for interacting with the database
    private DatabaseOpenHelper databaseOpenHelper; // creates the database
 
@@ -23,7 +24,7 @@ public class DatabaseConnector
    {
       // create a new DatabaseOpenHelper
       databaseOpenHelper = 
-         new DatabaseOpenHelper(context, DATABASE_NAME, null, 1);
+         new DatabaseOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION);
    }
 
    // open the database connection
@@ -88,7 +89,7 @@ public class DatabaseConnector
    public Cursor getOneContact(long id) 
    {
       return database.query(
-         "contacts", null, "_id=" + id, null, null, null, null);
+         "contacts", null, "_id= ?", new String[] {String.valueOf(id)}, null, null, null);
    } 
 
    // delete the contact specified by the given String name
@@ -125,6 +126,14 @@ public class DatabaseConnector
       public void onUpgrade(SQLiteDatabase db, int oldVersion, 
           int newVersion) 
       {
+         if (oldVersion < 2) {
+            // do sql statement
+         }
+
+         if (oldVersion < 3) {
+
+         }
+
       }
    } // end class DatabaseOpenHelper
 } // end class DatabaseConnector
