@@ -19,6 +19,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.activeandroid.query.Select;
+import com.deitel.addressbook.models.Contact;
+
 public class DetailsFragment extends Fragment
 {
    // callback methods implemented by MainActivity  
@@ -32,7 +35,8 @@ public class DetailsFragment extends Fragment
    }
    
    private DetailsFragmentListener listener;
-   
+
+   private Contact contact;
    private long rowID = -1; // selected contact's rowID
    private TextView nameTextView; // displays contact's name 
    private TextView phoneTextView; // displays contact's phone
@@ -77,6 +81,8 @@ public class DetailsFragment extends Fragment
          if (arguments != null)
             rowID = arguments.getLong(MainActivity.ROW_ID);
       }
+
+      contact = new Select().from(Contact.class).where("Id = ?", String.valueOf(rowID)).executeSingle();
          
       // inflate DetailsFragment's layout
       View view = 
@@ -91,17 +97,18 @@ public class DetailsFragment extends Fragment
       cityTextView = (TextView) view.findViewById(R.id.cityTextView);
       stateTextView = (TextView) view.findViewById(R.id.stateTextView);
       zipTextView = (TextView) view.findViewById(R.id.zipTextView);
+
+      nameTextView.setText(contact.name);
+      phoneTextView.setText(contact.phone);
+      emailTextView.setText(contact.email);
+      streetTextView.setText(contact.street);
+      cityTextView.setText(contact.city);
+      stateTextView.setText(contact.state);
+      zipTextView.setText(contact.zip);
+
       return view;
    }
    
-   // called when the DetailsFragment resumes
-   @Override
-   public void onResume()
-   {
-      super.onResume();
-      new LoadContactTask().execute(rowID); // load contact at rowID
-   } 
-
    // save currently displayed contact's row ID
    @Override
    public void onSaveInstanceState(Bundle outState) 
@@ -128,13 +135,7 @@ public class DetailsFragment extends Fragment
             // create Bundle containing contact data to edit
             Bundle arguments = new Bundle();
             arguments.putLong(MainActivity.ROW_ID, rowID);
-            arguments.putCharSequence("name", nameTextView.getText());
-            arguments.putCharSequence("phone", phoneTextView.getText());
-            arguments.putCharSequence("email", emailTextView.getText());
-            arguments.putCharSequence("street", streetTextView.getText());
-            arguments.putCharSequence("city", cityTextView.getText());
-            arguments.putCharSequence("state", stateTextView.getText());
-            arguments.putCharSequence("zip", zipTextView.getText());            
+
             listener.onEditContact(arguments); // pass Bundle to listener
             return true;
          case R.id.action_delete:
@@ -145,49 +146,6 @@ public class DetailsFragment extends Fragment
       return super.onOptionsItemSelected(item);
    } 
    
-   // performs database query outside GUI thread
-   private class LoadContactTask extends AsyncTask<Long, Object, Cursor> 
-   {
-      DatabaseConnector databaseConnector = 
-         new DatabaseConnector(getActivity());
-
-      // open database & get Cursor representing specified contact's data
-      @Override
-      protected Cursor doInBackground(Long... params)
-      {
-         databaseConnector.open();
-         return databaseConnector.getOneContact(params[0]);
-      } 
-
-      // use the Cursor returned from the doInBackground method
-      @Override
-      protected void onPostExecute(Cursor result)
-      {
-         super.onPostExecute(result);
-         result.moveToFirst(); // move to the first item 
-   
-         // get the column index for each data item
-         int nameIndex = result.getColumnIndex("name");
-         int phoneIndex = result.getColumnIndex("phone");
-         int emailIndex = result.getColumnIndex("email");
-         int streetIndex = result.getColumnIndex("street");
-         int cityIndex = result.getColumnIndex("city");
-         int stateIndex = result.getColumnIndex("state");
-         int zipIndex = result.getColumnIndex("zip");
-   
-         // fill TextViews with the retrieved data
-         nameTextView.setText(result.getString(nameIndex));
-         phoneTextView.setText(result.getString(phoneIndex));
-         emailTextView.setText(result.getString(emailIndex));
-         streetTextView.setText(result.getString(streetIndex));
-         cityTextView.setText(result.getString(cityIndex));
-         stateTextView.setText(result.getString(stateIndex));
-         zipTextView.setText(result.getString(zipIndex));
-   
-         result.close(); // close the result cursor
-         databaseConnector.close(); // close database connection
-      } // end method onPostExecute
-   } // end class LoadContactTask
 
    // delete a contact
    private void deleteContact()
@@ -219,29 +177,9 @@ public class DetailsFragment extends Fragment
                   public void onClick(
                      DialogInterface dialog, int button)
                   {
-                     final DatabaseConnector databaseConnector = 
-                        new DatabaseConnector(getActivity());
-      
-                     // AsyncTask deletes contact and notifies listener
-                     AsyncTask<Long, Object, Object> deleteTask =
-                        new AsyncTask<Long, Object, Object>()
-                        {
-                           @Override
-                           protected Object doInBackground(Long... params)
-                           {
-                              databaseConnector.deleteContact(params[0]); 
-                              return null;
-                           } 
-      
-                           @Override
-                           protected void onPostExecute(Object result)
-                           {                                 
-                              listener.onContactDeleted();
-                           }
-                        }; // end new AsyncTask
-      
-                     // execute the AsyncTask to delete contact at rowID
-                     deleteTask.execute(new Long[] { rowID });               
+                     contact.delete();
+                     listener.onContactDeleted();
+
                   } // end method onClick
                } // end anonymous inner class
             ); // end call to method setPositiveButton

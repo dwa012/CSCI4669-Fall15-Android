@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.deitel.addressbook"
-        minSdkVersion 18
+        minSdkVersion 19
         targetSdkVersion 23
     }
 
@@ -19,6 +19,7 @@ android {
 
     dependencies {
         compile 'com.android.support:support-v4:23.0.0'
+        compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
     }
 }
 

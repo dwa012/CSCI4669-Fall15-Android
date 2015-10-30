@@ -10,6 +10,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,17 +19,22 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.activeandroid.query.Select;
+import com.deitel.addressbook.models.Contact;
+
 public class AddEditFragment extends Fragment
 {
-   // callback method implemented by MainActivity  
+   // callback method implemented by MainActivity
    public interface AddEditFragmentListener
    {
       // called after edit completed so contact can be redisplayed
       public void onAddEditCompleted(long rowID);
    }
-   
-   private AddEditFragmentListener listener; 
-   
+
+   private AddEditFragmentListener listener;
+
+   private Contact contact;
+
    private long rowID; // database row ID of the contact
    private Bundle contactInfoBundle; // arguments for editing a contact
 
@@ -46,7 +52,7 @@ public class AddEditFragment extends Fragment
    public void onAttach(Activity activity)
    {
       super.onAttach(activity);
-      listener = (AddEditFragmentListener) activity; 
+      listener = (AddEditFragmentListener) activity;
    }
 
    // remove AddEditFragmentListener when Fragment detached
@@ -54,21 +60,21 @@ public class AddEditFragment extends Fragment
    public void onDetach()
    {
       super.onDetach();
-      listener = null; 
+      listener = null;
    }
-   
+
    // called when Fragment's view needs to be created
    @Override
    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-      Bundle savedInstanceState)
+                            Bundle savedInstanceState)
    {
-      super.onCreateView(inflater, container, savedInstanceState);    
+      super.onCreateView(inflater, container, savedInstanceState);
       setRetainInstance(true); // save fragment across config changes
       setHasOptionsMenu(true); // fragment has menu items to display
-      
+
       // inflate GUI and get references to EditTexts
-      View view = 
-         inflater.inflate(R.layout.fragment_add_edit, container, false);
+      View view =
+              inflater.inflate(R.layout.fragment_add_edit, container, false);
       nameEditText = (EditText) view.findViewById(R.id.nameEditText);
       phoneEditText = (EditText) view.findViewById(R.id.phoneEditText);
       emailEditText = (EditText) view.findViewById(R.id.emailEditText);
@@ -82,109 +88,97 @@ public class AddEditFragment extends Fragment
       if (contactInfoBundle != null)
       {
          rowID = contactInfoBundle.getLong(MainActivity.ROW_ID);
-         nameEditText.setText(contactInfoBundle.getString("name"));  
-         phoneEditText.setText(contactInfoBundle.getString("phone"));  
-         emailEditText.setText(contactInfoBundle.getString("email"));  
-         streetEditText.setText(contactInfoBundle.getString("street"));  
-         cityEditText.setText(contactInfoBundle.getString("city"));  
-         stateEditText.setText(contactInfoBundle.getString("state"));  
-         zipEditText.setText(contactInfoBundle.getString("zip"));  
-      } 
-      
+
+         this.contact = new Select().from(Contact.class).where("id = ?", rowID).executeSingle();
+
+         nameEditText.setText(this.contact.name);
+         phoneEditText.setText(this.contact.phone);
+         emailEditText.setText(this.contact.email);
+         streetEditText.setText(this.contact.street);
+         cityEditText.setText(this.contact.city);
+         stateEditText.setText(this.contact.state);
+         zipEditText.setText(this.contact.zip);
+
+      } else {
+         this.contact = new Contact();
+      }
+
       // set Save Contact Button's event listener 
-      Button saveContactButton = 
-         (Button) view.findViewById(R.id.saveContactButton);
+      Button saveContactButton = (Button) view.findViewById(R.id.saveContactButton);
       saveContactButton.setOnClickListener(saveContactButtonClicked);
       return view;
    }
 
    // responds to event generated when user saves a contact
-   OnClickListener saveContactButtonClicked = new OnClickListener() 
+   OnClickListener saveContactButtonClicked = new OnClickListener()
    {
       @Override
-      public void onClick(View v) 
+      public void onClick(View v)
       {
-         if (nameEditText.getText().toString().trim().length() != 0)
+         if (!TextUtils.isEmpty(nameEditText.getText().toString()))
          {
             // AsyncTask to save contact, then notify listener 
-            AsyncTask<Object, Object, Object> saveContactTask = 
-               new AsyncTask<Object, Object, Object>() 
-               {
-                  @Override
-                  protected Object doInBackground(Object... params) 
-                  {
-                     saveContact(); // save contact to the database
-                     return null;
-                  } 
-      
-                  @Override
-                  protected void onPostExecute(Object result) 
-                  {
-                     // hide soft keyboard
-                     InputMethodManager imm = (InputMethodManager) 
-                        getActivity().getSystemService(
-                           Context.INPUT_METHOD_SERVICE);
-                     imm.hideSoftInputFromWindow(
-                        getView().getWindowToken(), 0);
+            AsyncTask<Object, Object, Object> saveContactTask =
+                    new AsyncTask<Object, Object, Object>()
+                    {
+                       @Override
+                       protected Object doInBackground(Object... params)
+                       {
+                          saveContact(); // save contact to the database
+                          return null;
+                       }
 
-                     listener.onAddEditCompleted(rowID);
-                  } 
-               }; // end AsyncTask
-               
+                       @Override
+                       protected void onPostExecute(Object result)
+                       {
+                          // hide soft keyboard
+                          InputMethodManager imm = (InputMethodManager)
+                                  getActivity().getSystemService(
+                                          Context.INPUT_METHOD_SERVICE);
+                          imm.hideSoftInputFromWindow(
+                                  getView().getWindowToken(), 0);
+
+                          listener.onAddEditCompleted(rowID);
+                       }
+                    }; // end AsyncTask
+
             // save the contact to the database using a separate thread
-            saveContactTask.execute((Object[]) null); 
-         } 
+            saveContactTask.execute((Object[]) null);
+         }
          else // required contact name is blank, so display error dialog
          {
-            DialogFragment errorSaving = 
-               new DialogFragment()
-               {
-                  @Override
-                  public Dialog onCreateDialog(Bundle savedInstanceState)
-                  {
-                     AlertDialog.Builder builder = 
-                        new AlertDialog.Builder(getActivity());
-                     builder.setMessage(R.string.error_message);
-                     builder.setPositiveButton(R.string.ok, null);                     
-                     return builder.create();
-                  }               
-               };
-            
+            DialogFragment errorSaving =
+                    new DialogFragment()
+                    {
+                       @Override
+                       public Dialog onCreateDialog(Bundle savedInstanceState)
+                       {
+                          AlertDialog.Builder builder =
+                                  new AlertDialog.Builder(getActivity());
+                          builder.setMessage(R.string.error_message);
+                          builder.setPositiveButton(R.string.ok, null);
+                          return builder.create();
+                       }
+                    };
+
             errorSaving.show(getFragmentManager(), "error saving contact");
-         } 
+         }
       } // end method onClick
    }; // end OnClickListener saveContactButtonClicked
 
    // saves contact information to the database
-   private void saveContact() 
+   private void saveContact()
    {
-      // get DatabaseConnector to interact with the SQLite database
-      DatabaseConnector databaseConnector = 
-         new DatabaseConnector(getActivity());
+      this.contact.name = nameEditText.getText().toString();
+      this.contact.phone = phoneEditText.getText().toString();
+      this.contact.email = emailEditText.getText().toString();
+      this.contact.street = streetEditText.getText().toString();
+      this.contact.city = cityEditText.getText().toString();
+      this.contact.state = stateEditText.getText().toString();
+      this.contact.zip = zipEditText.getText().toString();
 
-      if (contactInfoBundle == null)
-      {
-         // insert the contact information into the database
-         rowID = databaseConnector.insertContact(
-            nameEditText.getText().toString(),
-            phoneEditText.getText().toString(), 
-            emailEditText.getText().toString(), 
-            streetEditText.getText().toString(),
-            cityEditText.getText().toString(), 
-            stateEditText.getText().toString(), 
-            zipEditText.getText().toString());
-      } 
-      else
-      {
-         databaseConnector.updateContact(rowID,
-            nameEditText.getText().toString(),
-            phoneEditText.getText().toString(), 
-            emailEditText.getText().toString(), 
-            streetEditText.getText().toString(),
-            cityEditText.getText().toString(), 
-            stateEditText.getText().toString(), 
-            zipEditText.getText().toString());
-      }
+      this.contact.save();
+      listener.onAddEditCompleted(this.contact.getId());
    } // end method saveContact
 } // end class AddEditFragment
 
