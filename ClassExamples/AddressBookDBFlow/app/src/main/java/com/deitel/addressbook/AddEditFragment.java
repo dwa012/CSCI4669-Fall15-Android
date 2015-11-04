@@ -18,9 +18,14 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.deitel.addressbook.models.Contact;
+import com.raizlabs.android.dbflow.sql.language.Select;
+
 public class AddEditFragment extends Fragment
 {
-   // callback method implemented by MainActivity  
+   private Contact contact;
+
+   // callback method implemented by MainActivity
    public interface AddEditFragmentListener
    {
       // called after edit completed so contact can be redisplayed
@@ -82,14 +87,19 @@ public class AddEditFragment extends Fragment
       if (contactInfoBundle != null)
       {
          rowID = contactInfoBundle.getLong(MainActivity.ROW_ID);
-         nameEditText.setText(contactInfoBundle.getString("name"));  
-         phoneEditText.setText(contactInfoBundle.getString("phone"));  
-         emailEditText.setText(contactInfoBundle.getString("email"));  
-         streetEditText.setText(contactInfoBundle.getString("street"));  
-         cityEditText.setText(contactInfoBundle.getString("city"));  
-         stateEditText.setText(contactInfoBundle.getString("state"));  
-         zipEditText.setText(contactInfoBundle.getString("zip"));  
-      } 
+
+         contact = new Select().from(Contact.class).where("id = ?", String.valueOf(rowID)).querySingle();
+
+         nameEditText.setText(contact.name);
+         phoneEditText.setText(contact.phone);
+         emailEditText.setText(contact.email);
+         streetEditText.setText(contact.street);
+         cityEditText.setText(contact.city);
+         stateEditText.setText(contact.state);
+         zipEditText.setText(contact.zip);
+      } else {
+         contact = new Contact();
+      }
       
       // set Save Contact Button's event listener 
       Button saveContactButton = 
@@ -158,33 +168,17 @@ public class AddEditFragment extends Fragment
    // saves contact information to the database
    private void saveContact() 
    {
-      // get DatabaseConnector to interact with the SQLite database
-      DatabaseConnector databaseConnector = 
-         new DatabaseConnector(getActivity());
 
-      if (contactInfoBundle == null)
-      {
-         // insert the contact information into the database
-         rowID = databaseConnector.insertContact(
-            nameEditText.getText().toString(),
-            phoneEditText.getText().toString(), 
-            emailEditText.getText().toString(), 
-            streetEditText.getText().toString(),
-            cityEditText.getText().toString(), 
-            stateEditText.getText().toString(), 
-            zipEditText.getText().toString());
-      } 
-      else
-      {
-         databaseConnector.updateContact(rowID,
-            nameEditText.getText().toString(),
-            phoneEditText.getText().toString(), 
-            emailEditText.getText().toString(), 
-            streetEditText.getText().toString(),
-            cityEditText.getText().toString(), 
-            stateEditText.getText().toString(), 
-            zipEditText.getText().toString());
-      }
+      contact.name = nameEditText.getText().toString();
+      contact.phone = phoneEditText.getText().toString();
+      contact.email = emailEditText.getText().toString();
+      contact.street = streetEditText.getText().toString();
+      contact.city = cityEditText.getText().toString();
+      contact.state = stateEditText.getText().toString();
+      contact.zip = zipEditText.getText().toString();
+
+      contact.save();
+
    } // end method saveContact
 } // end class AddEditFragment
 
