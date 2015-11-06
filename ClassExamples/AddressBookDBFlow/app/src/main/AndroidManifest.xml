@@ -23,6 +23,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:authorities="edu.uno.csci.4661.addressbook"
+            android:exported="false"
+            android:name=".db.ContactDatabase$Provider"/>
+
     </application>
 
 </manifest>

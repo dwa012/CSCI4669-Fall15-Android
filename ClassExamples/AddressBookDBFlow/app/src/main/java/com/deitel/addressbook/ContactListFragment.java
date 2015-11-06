@@ -7,9 +7,12 @@ import android.app.ListFragment;
 import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Loader;
+import android.database.ContentObserver;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -32,7 +35,9 @@ import java.util.List;
 
 public class ContactListFragment extends ListFragment implements LoaderManager.LoaderCallbacks<List<Contact>>
 {
-   @Override
+    private ContentObserver contentObserver;
+
+    @Override
    public Loader<List<Contact>> onCreateLoader(int id, Bundle args) {
       return new AsyncTaskLoaderExample<List<Contact>>(getActivity()) {
          @Override
@@ -99,7 +104,12 @@ public class ContactListFragment extends ListFragment implements LoaderManager.L
       contactListView.setOnItemClickListener(viewContactListener);      
       contactListView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
-       getLoaderManager().initLoader(0, new Bundle(), this);
+       contentObserver = new ContentObserver(new Handler()) {
+           @Override
+           public void onChange(boolean selfChange) {
+               getLoaderManager().restartLoader(0, new Bundle(), ContactListFragment.this);
+           }
+       };
    }
 
    // responds to the user touching a contact's name in the ListView
@@ -135,8 +145,22 @@ public class ContactListFragment extends ListFragment implements LoaderManager.L
       
       return super.onOptionsItemSelected(item); // call super's method
    }
-   
-   // update data set
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        getActivity().getContentResolver().registerContentObserver(Contact.CONTENT_URI, false, contentObserver);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        getActivity().getContentResolver().unregisterContentObserver(contentObserver);
+    }
+
+    // update data set
    public void updateContactList()
    {
       getLoaderManager().restartLoader(0, new Bundle(), this);
