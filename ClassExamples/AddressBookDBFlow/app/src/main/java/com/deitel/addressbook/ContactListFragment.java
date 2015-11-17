@@ -38,118 +38,127 @@ public class ContactListFragment extends ListFragment implements LoaderManager.L
     private ContentObserver contentObserver;
 
     @Override
-   public Loader<List<Contact>> onCreateLoader(int id, Bundle args) {
-      return new AsyncTaskLoaderExample<List<Contact>>(getActivity()) {
-         @Override
-         public List<Contact> loadInBackground() {
-            return new Select().from(Contact.class).queryList();
-         }
-      };
-   }
+    public Loader<List<Contact>> onCreateLoader(int id, Bundle args) {
+        return new AsyncTaskLoaderExample<List<Contact>>(getActivity()) {
+            @Override
+            public List<Contact> loadInBackground() {
+                return new Select().from(Contact.class).queryList();
+            }
+        };
+    }
 
-   @Override
-   public void onLoadFinished(Loader<List<Contact>> loader, List<Contact> data) {
-       setListAdapter(new ContactAdapter(getActivity(), android.R.layout.simple_list_item_1, android.R.id.text1, data));
-   }
+    @Override
+    public void onLoadFinished(Loader<List<Contact>> loader, List<Contact> data) {
+        setListAdapter(new ContactAdapter(getActivity(), android.R.layout.simple_list_item_1, android.R.id.text1, data));
+        setListShown(true);
+    }
 
-   @Override
-   public void onLoaderReset(Loader<List<Contact>> loader) {
-      setListAdapter(null);
-   }
+    @Override
+    public void onLoaderReset(Loader<List<Contact>> loader) {
+        setListShown(false);
+        setListAdapter(null);
+    }
 
-   // callback methods implemented by MainActivity
-   public interface ContactListFragmentListener
-   {
-      // called when user selects a contact
-      public void onContactSelected(long rowID);
+    // callback methods implemented by MainActivity
+    public interface ContactListFragmentListener
+    {
+        // called when user selects a contact
+        public void onContactSelected(long rowID);
 
-      // called when user decides to add a contact
-      public void onAddContact();
-   }
-   
-   private ContactListFragmentListener listener; 
-   
-   private ListView contactListView; // the ListActivity's ListView
-   private CursorAdapter contactAdapter; // adapter for ListView
-   
-   // set ContactListFragmentListener when fragment attached   
-   @Override
-   public void onAttach(Activity activity)
-   {
-      super.onAttach(activity);
-      listener = (ContactListFragmentListener) activity;
-   }
+        // called when user decides to add a contact
+        public void onAddContact();
+    }
 
-   // remove ContactListFragmentListener when Fragment detached
-   @Override
-   public void onDetach()
-   {
-      super.onDetach();
-      listener = null;
-   }
+    private ContactListFragmentListener listener;
 
-   // called after View is created
-   @Override
-   public void onViewCreated(View view, Bundle savedInstanceState)
-   {
-      super.onViewCreated(view, savedInstanceState);
-      setRetainInstance(true); // save fragment across config changes
-      setHasOptionsMenu(true); // this fragment has menu items to display
+    private ListView contactListView; // the ListActivity's ListView
+    private CursorAdapter contactAdapter; // adapter for ListView
 
-      // set text to display when there are no contacts
-      setEmptyText(getResources().getString(R.string.no_contacts));
+    // set ContactListFragmentListener when fragment attached
+    @Override
+    public void onAttach(Activity activity)
+    {
+        super.onAttach(activity);
+        listener = (ContactListFragmentListener) activity;
+    }
 
-      // get ListView reference and configure ListView
-      contactListView = getListView(); 
-      contactListView.setOnItemClickListener(viewContactListener);      
-      contactListView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+    // remove ContactListFragmentListener when Fragment detached
+    @Override
+    public void onDetach()
+    {
+        super.onDetach();
+        listener = null;
+    }
 
-       contentObserver = new ContentObserver(new Handler()) {
-           @Override
-           public void onChange(boolean selfChange) {
-               getLoaderManager().restartLoader(0, new Bundle(), ContactListFragment.this);
-           }
-       };
-   }
+    // called after View is created
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState)
+    {
+        super.onViewCreated(view, savedInstanceState);
+        setRetainInstance(true); // save fragment across config changes
+        setHasOptionsMenu(true); // this fragment has menu items to display
 
-   // responds to the user touching a contact's name in the ListView
-   OnItemClickListener viewContactListener = new OnItemClickListener() 
-   {
-      @Override
-      public void onItemClick(AdapterView<?> parent, View view,
-         int position, long id) 
-      {
-          Contact c = (Contact) parent.getItemAtPosition(position);
-         listener.onContactSelected(c.id); // pass selection to MainActivity
-      } 
-   }; // end viewContactListener
+        // set text to display when there are no contacts
+        setEmptyText(getResources().getString(R.string.no_contacts));
 
-   // display this fragment's menu items
-   @Override
-   public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
-   {
-      super.onCreateOptionsMenu(menu, inflater);
-      inflater.inflate(R.menu.fragment_contact_list_menu, menu);
-   }
+        // get ListView reference and configure ListView
+        contactListView = getListView();
+        contactListView.setOnItemClickListener(viewContactListener);
+        contactListView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
-   // handle choice from options menu
-   @Override
-   public boolean onOptionsItemSelected(MenuItem item) 
-   {
-      switch (item.getItemId())
-      {
-         case R.id.action_add:
-            listener.onAddContact();
-            return true;
-      }
-      
-      return super.onOptionsItemSelected(item); // call super's method
-   }
+        contentObserver = new ContentObserver(new Handler()) {
+            @Override
+            public void onChange(boolean selfChange) {
+                getLoaderManager().restartLoader(0, new Bundle(), ContactListFragment.this);
+            }
+        };
+
+        getActivity().getLoaderManager().initLoader(0, new Bundle(), this);
+    }
+
+    // responds to the user touching a contact's name in the ListView
+    OnItemClickListener viewContactListener = new OnItemClickListener()
+    {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view,
+                                int position, long id)
+        {
+            Contact c = (Contact) parent.getItemAtPosition(position);
+            listener.onContactSelected(c.id); // pass selection to MainActivity
+        }
+    }; // end viewContactListener
+
+    // display this fragment's menu items
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
+    {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.fragment_contact_list_menu, menu);
+    }
+
+    // handle choice from options menu
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.action_add:
+                listener.onAddContact();
+                return true;
+
+            case R.id.action_refresh:
+                ((MainActivity)getActivity()).refreshData();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item); // call super's method
+    }
 
     @Override
     public void onStart() {
         super.onStart();
 
+        getLoaderManager().restartLoader(0, new Bundle(), this);
         getActivity().getContentResolver().registerContentObserver(Contact.CONTENT_URI, false, contentObserver);
     }
 
@@ -161,10 +170,10 @@ public class ContactListFragment extends ListFragment implements LoaderManager.L
     }
 
     // update data set
-   public void updateContactList()
-   {
-      getLoaderManager().restartLoader(0, new Bundle(), this);
-   }
+    public void updateContactList()
+    {
+        getLoaderManager().restartLoader(0, new Bundle(), this);
+    }
 
     public class ContactAdapter extends ArrayAdapter<Contact> {
 

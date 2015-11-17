@@ -27,5 +27,6 @@
     <string name="error_message">You must enter a contact name</string>
     <string name="button_cancel">Cancel</string>
     <string name="button_delete">Delete</string>
+    <string name="menuitem_refresh">Refresh</string>
 
 </resources>
